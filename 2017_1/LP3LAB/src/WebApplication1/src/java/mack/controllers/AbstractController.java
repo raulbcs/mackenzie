@@ -11,12 +11,18 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author rb
  */
+
 public abstract class AbstractController implements Controller {
+
     private HttpServletRequest request;
     protected String returnPage;
 
     public void init(HttpServletRequest request) {
         this.setRequest(request);
+    }
+
+    public void setReturnPage(String page) {
+        returnPage = page;
     }
 
     public String getReturnPage() {
@@ -31,3 +37,4 @@ public abstract class AbstractController implements Controller {
         this.request = request;
     }
 }
+

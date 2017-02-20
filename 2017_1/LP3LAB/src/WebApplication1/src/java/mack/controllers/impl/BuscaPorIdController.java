@@ -10,25 +10,27 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import mack.controllers.AbstractController;
-import mack.entities.Usuario;
 import mack.dao.usuario.UsuarioDAO;
 import mack.dao.usuario.UsuarioDAOFactory;
+import mack.entities.Usuario;
 
 /**
  *
  * @author rb
  */
-public class BuscaUsuarioController extends AbstractController {
+public class BuscaPorIdController extends AbstractController {
     public void execute() {
         try {
-
+            String stringid = this.getRequest().getParameter("id");
+            int id = Integer.parseInt(stringid);
             UsuarioDAO dao = UsuarioDAOFactory.getUsuarioDAO();
-            List usuarios = new ArrayList<Usuario>();
+            Usuario u;
+            u = (Usuario)dao.buscaUsuarioPorId(id);
 
-            // this.setReturnPage("/index.jsp"); // método não existente?
-            this.getRequest().setAttribute("usuarios", usuarios);
+            this.setReturnPage("/usuario.jsp");
+            this.getRequest().setAttribute("usuario", u);
         } catch(Exception ex) {
-            Logger.getLogger(BuscaUsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BuscaTodosController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
