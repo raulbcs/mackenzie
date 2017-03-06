@@ -17,10 +17,17 @@ Usuário e senha: ```adminTomcat```
 Instalação: ```brew install derby```  
 Iniciar: ```env DERBY_OPTS=-Dsystem.derby.home=/usr/local/var/derby /usr/local/bin/startNetworkServer```   
 Path: ```/usr/local/Cellar/derby/10.12.1.1/bin```   
-URL: ```jdbc:derby://localhost:1527/meuDB;create=true;user=me;password=pass```
+URI: ```jdbc:derby://localhost:1527/meuDB;create=true;user=me;password=pass```
 DB client: ```/usr/local/Cellar/derby/10.12.1.1/bin/ij```
 |- connect (inside ij): ```connect 'jdbc:derby://localhost:1527/meuDB;create=true;user=me;password=pass';```
 
 - SquirrelSQL
 
 Instalação: [http://squirrel-sql.sourceforge.net/#installation](http://squirrel-sql.sourceforge.net/#installation)
+
+
+
+
+whitefly  
+1. remover do projeto as bibliotecas do hibernate  
+2. standalone -c standalone-full.xml  
