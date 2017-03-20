@@ -28,6 +28,29 @@ Instalação: [http://squirrel-sql.sourceforge.net/#installation](http://squirre
 
 
 
-whitefly  
+wildfly
 1. remover do projeto as bibliotecas do hibernate  
 2. standalone -c standalone-full.xml  
+
+==> Caveats
+The home of WildFly Application Server 10.1.0.Final is:
+  /usr/local/opt/wildfly-as/libexec
+You may want to add the following to your .bash_profile:
+  export JBOSS_HOME=/usr/local/opt/wildfly-as/libexec
+  export PATH=${PATH}:${JBOSS_HOME}/bin
+
+To have launchd start wildfly-as now and restart at login:
+  brew services start wildfly-as
+Or, if you don't want/need a background service you can just run:
+  /usr/local/opt/wildfly-as/libexec/bin/standalone.sh --server-config=standalone.xml
+
+
+codar:
+1. Busca
+2. BuscaPorId
+3. BuscaPorNome
+4. BuscaTodos
+5. Login
+6. criar componente corporativo
+ejb container
+7. modulo ejb
